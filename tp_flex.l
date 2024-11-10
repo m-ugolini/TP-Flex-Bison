@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "y.tab.h"
 %}
-%option noyywrap
 
 caracter [a-zA-Z]
 digito [0-9]
