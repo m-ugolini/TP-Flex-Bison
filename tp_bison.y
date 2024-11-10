@@ -6,14 +6,19 @@
       char* cadena;
       int digito;
 }
-%% 
-%token ASIGNACION RESERVADA PUNTOCOMA PARIZQ PARDER SUMA RESTA COMA
+%token ASIGNACION INICIO FIN LEER ESCRIBIR PUNTOCOMA PARIZQ PARDER SUMA RESTA COMA
 %token <cadena> IDENTIFICADOR
 %token <digito> CONSTANTE
 %% 
+sentencias: sentencias sentencia
+ |sentencia
+;
+
+sentencia: ID {if(yyleng>=32) {yyerror("Los identificadores no deben superar los 32 caracteres");}}ASIGNACION
+%% 
 int main(){
-return 0;
-//LLAMAR RUTINAS SEMANTICAS QUE ESTEN EN FUNCIONES.H, EJEMPLO QUE LOS ID SON MAX 32 CARACTERES
+      yyparse();
+      return 0;
 }
 void yyerror(){
 printf("ERROR: No pertenece al lenguaje micro");
