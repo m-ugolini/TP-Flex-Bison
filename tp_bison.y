@@ -30,7 +30,7 @@ operadorAditivo: SUMA
 |RESTA
 ;
 
-sentencia: IDENTIFICADOR {if(yyleng>=32) {yyerror("Los identificadores no deben superar los 32 caracteres");}}ASIGNACION
+sentencia: IDENTIFICADOR {if(yyleng>=32){yyerror("Los identificadores no deben superar los 32 caracteres");}}ASIGNACION
 %% 
 int main(){
       yyparse();
