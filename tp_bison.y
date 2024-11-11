@@ -10,11 +10,27 @@
 %token <cadena> IDENTIFICADOR
 %token <digito> CONSTANTE
 %% 
-sentencias: sentencias sentencia
- |sentencia
+objetivo: programa FDT
+;
+programa: INICIO listaSentencias FIN
+;
+listaSentencias: sentencia sentencia
+;
+sentencia: IDENTIFICADOR ASIGNACION expresion PUNTOCOMA
+|LEER PARIZQ listaIdentificadores PARDER PUNTOCOMA
+|ESCRIBIR PARIZQ listaExpresiones PARDER PUNTOCOMA
+;
+listaIdentificadores: IDENTIFICADOR COMA IDENTIFICADOR
+;
+listaExpresiones: expresion COMA expresion
+;
+expresion: primaria operadorAditivo primaria
+;
+operadorAditivo: SUMA
+|RESTA
 ;
 
-sentencia: ID {if(yyleng>=32) {yyerror("Los identificadores no deben superar los 32 caracteres");}}ASIGNACION
+sentencia: IDENTIFICADOR {if(yyleng>=32) {yyerror("Los identificadores no deben superar los 32 caracteres");}}ASIGNACION
 %% 
 int main(){
       yyparse();
