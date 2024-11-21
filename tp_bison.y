@@ -6,7 +6,7 @@
       char* cadena;
       int digito;
 }
-%token ASIGNACION INICIO FIN LEER ESCRIBIR PUNTOCOMA PARIZQ PARDER SUMA RESTA COMA
+%token ASIGNACION INICIO FIN LEER ESCRIBIR PUNTOCOMA PARIZQ PARDER SUMA RESTA COMA FDT
 %token <cadena> IDENTIFICADOR
 %token <digito> CONSTANTE
 %% 
@@ -24,7 +24,7 @@ listaIdentificadores: IDENTIFICADOR COMA IDENTIFICADOR
 ;
 listaExpresiones: expresion COMA expresion
 ;
-expresion: primaria operadorAditivo primaria
+expresion: digito operadorAditivo digito
 ;
 operadorAditivo: SUMA
 |RESTA
