@@ -24,13 +24,12 @@ listaIdentificadores: IDENTIFICADOR COMA IDENTIFICADOR
 ;
 listaExpresiones: expresion COMA expresion
 ;
-expresion: digito operadorAditivo digito
+expresion: CONSTANTE operadorAditivo CONSTANTE
 ;
 operadorAditivo: SUMA
 |RESTA
 ;
 
-sentencia: IDENTIFICADOR {if(yyleng>=32){yyerror("Los identificadores no deben superar los 32 caracteres");}}ASIGNACION
 %% 
 int main(){
       yyparse();
