@@ -21,7 +21,7 @@ digito [0-9]
 "=:"                             {return ASIGNACION;}
 {caracter}({caracter}|{digito})* {return IDENTIFICADOR;}
 {digito}+                        {return CONSTANTE;}
-.                                yyerror();
+.                                yyerror("ERROR");
 %%
 int main()
 {

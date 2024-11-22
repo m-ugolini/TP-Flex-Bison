@@ -11,7 +11,6 @@ void yyerror(const char *s);
 %token ASIGNACION INICIO FIN LEER ESCRIBIR PUNTOCOMA PARIZQ PARDER SUMA RESTA COMA FDT ERRORLEXICO NO_DEFINIDO
 %token <cadena> IDENTIFICADOR
 %token <digito> CONSTANTE
-%defines "y.tab.h"
 %% 
 objetivo: programa FDT
 ;
