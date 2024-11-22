@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include "y.tab.h"
 #define NUMESTADOS 15
 #define NUMCOLS 13
 #define TAMLEX 32+1
@@ -11,7 +12,7 @@
 //DECLARACIONES
 FILE * in;
 typedef enum {
-INICIO, FIN, LEER, ESCRIBIR, ID, CONSTANTE, PARENIZQUIERDO, PARENDERECHO, PUNTOYCOMA,
+INICIO, FIN, LEER, ESCRIBIR, IDENTIFICADOR, CONSTANTE, PARIZQ, PARDER, PUNTOCOMA,
 COMA, ASIGNACION, SUMA, RESTA, FDT, ERRORLEXICO, NO_DEFINIDO
 } TOKEN;
 typedef struct {
@@ -49,7 +50,7 @@ return reg;
 REG_EXPRESION ProcesarId(void) {
 REG_EXPRESION reg;
 Chequear(buffer);
-reg.clase = ID;
+reg.clase = IDENTIFICADOR;
 strcpy(reg.nombre, buffer);
 return reg;
 }
@@ -79,7 +80,7 @@ int i = 4;
 while ( strcmp("$", TS[i].identifi) ) i++;
 if ( i < 999 ) {
  strcpy(TS[i].identifi, id );
- TS[i].t = ID;
+ TS[i].t = IDENTIFICADOR;
  strcpy(TS[++i].identifi, "$" );
 }
 }
