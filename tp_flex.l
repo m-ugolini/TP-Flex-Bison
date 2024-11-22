@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include "y.tab.h"
+void yyerror(const char *s);
 %}
 
 caracter [a-zA-Z]

@@ -385,7 +385,8 @@ char *yytext;
 #line 2 "tp_flex.l"
 #include <stdio.h>
 #include "y.tab.h"
-#line 389 "lex.yy.c"
+void yyerror(const char *s);
+#line 390 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -536,9 +537,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 9 "tp_flex.l"
+#line 10 "tp_flex.l"
 
-#line 542 "lex.yy.c"
+#line 543 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -623,80 +624,80 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "tp_flex.l"
+#line 11 "tp_flex.l"
 {return INICIO;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "tp_flex.l"
+#line 12 "tp_flex.l"
 {return FIN;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "tp_flex.l"
+#line 13 "tp_flex.l"
 {return LEER;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "tp_flex.l"
+#line 14 "tp_flex.l"
 {return ESCRIBIR;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 14 "tp_flex.l"
+#line 15 "tp_flex.l"
 {return SUMA;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 15 "tp_flex.l"
+#line 16 "tp_flex.l"
 {return RESTA;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 16 "tp_flex.l"
+#line 17 "tp_flex.l"
 {return COMA;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 17 "tp_flex.l"
+#line 18 "tp_flex.l"
 {return PUNTOCOMA;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 18 "tp_flex.l"
+#line 19 "tp_flex.l"
 {return PARIZQ;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 19 "tp_flex.l"
+#line 20 "tp_flex.l"
 {return PARDER;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 20 "tp_flex.l"
+#line 21 "tp_flex.l"
 {return ASIGNACION;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 21 "tp_flex.l"
+#line 22 "tp_flex.l"
 {return IDENTIFICADOR;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 22 "tp_flex.l"
+#line 23 "tp_flex.l"
 {return CONSTANTE;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 23 "tp_flex.l"
+#line 24 "tp_flex.l"
 yyerror();
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 24 "tp_flex.l"
+#line 25 "tp_flex.l"
 ECHO;
 	YY_BREAK
-#line 700 "lex.yy.c"
+#line 701 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1582,7 +1583,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 24 "tp_flex.l"
+#line 25 "tp_flex.l"
 
 int main()
 {

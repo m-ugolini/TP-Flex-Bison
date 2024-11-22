@@ -15,7 +15,7 @@ void yyerror(const char *s);
 %% 
 objetivo: programa FDT
 ;
-programa: INICIO listaSentencias FIN
+programa: INICIO listaSentencias FIN { printf("Programa reconocido.\n"); }
 ;
 listaSentencias: sentencia sentencia
 ;

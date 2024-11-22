@@ -1370,10 +1370,17 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-      
+        case 3:
 
 /* Line 1455 of yacc.c  */
-#line 1377 "y.tab.c"
+#line 18 "tp_bison.y"
+    { printf("Programa reconocido.\n"); }
+    break;
+
+
+
+/* Line 1455 of yacc.c  */
+#line 1384 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
