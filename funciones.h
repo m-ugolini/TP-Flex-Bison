@@ -28,9 +28,13 @@ char buffer[TAMLEX];
 TOKEN tokenActual;
 int flagToken = 0;
 
-//PROTOTIPO RUTINAS SEMANTICAS
+//PROTOTIPO RUTINAS SEMANTICAS Y FUNCIONES AUXILIARES
 REG_EXPRESION ProcesarCte(void);
 REG_EXPRESION ProcesarId(void);
+void Chequear(char * s);
+int Buscar(char * id, RegTS * TS, TOKEN * t);
+void Colocar(char * id, RegTS * TS);
+void Generar(char * co, char * a, char * b, char * c);
 
 //RUTINAS SEMANTICAS
 REG_EXPRESION ProcesarCte(void)
