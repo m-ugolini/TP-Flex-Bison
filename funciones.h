@@ -11,29 +11,26 @@
 
 //DECLARACIONES
 FILE * in;
-typedef enum {
-INICIO, FIN, LEER, ESCRIBIR, IDENTIFICADOR, CONSTANTE, PARIZQ, PARDER, PUNTOCOMA,
-COMA, ASIGNACION, SUMA, RESTA, FDT, ERRORLEXICO, NO_DEFINIDO
-} TOKEN;
+
 typedef struct {
  char identifi[TAMLEX];
- TOKEN t; 
+ int t; 
  } RegTS;
 RegTS TS[1000] = { {"inicio", INICIO}, {"fin", FIN}, {"leer", LEER}, {"escribir", ESCRIBIR}, {"$", NO_DEFINIDO} };
 typedef struct{
- TOKEN clase;
+ int clase;
  char nombre[TAMLEX];
  int valor;
  } REG_EXPRESION;
 char buffer[TAMLEX];
-TOKEN tokenActual;
+int tokenActual;
 int flagToken = 0;
 
 //PROTOTIPO RUTINAS SEMANTICAS Y FUNCIONES AUXILIARES
 REG_EXPRESION ProcesarCte(void);
 REG_EXPRESION ProcesarId(void);
 void Chequear(char * s);
-int Buscar(char * id, RegTS * TS, TOKEN * t);
+int Buscar(char * id, RegTS * TS, int * t);
 void Colocar(char * id, RegTS * TS);
 void Generar(char * co, char * a, char * b, char * c);
 
@@ -57,14 +54,14 @@ return reg;
 
 //FUNCIONES AUXILIARES
 void Chequear(char * s){
-TOKEN t;
+int t;
 if ( !Buscar(s, TS, &t) ) {
  Colocar(s, TS);
  Generar("Declara", s, "Entera", "");
 }
 }
 
-int Buscar(char * id, RegTS * TS, TOKEN * t) {
+int Buscar(char * id, RegTS * TS, int * t) {
 int i = 0;
 while ( strcmp("$", TS[i].identifi) ) {
  if ( !strcmp(id, TS[i].identifi) ) {

@@ -3,6 +3,7 @@
 #include "y.tab.h"
 void yyerror(const char *s);
 %}
+%option noyywrap
 
 caracter [a-zA-Z]
 digito [0-9]
