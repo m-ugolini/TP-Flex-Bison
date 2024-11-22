@@ -1,4 +1,5 @@
 %{
+#define YY_NO_MAIN
 #include <stdio.h>
 #include "y.tab.h"
 void yyerror(const char *s);
@@ -24,8 +25,4 @@ digito [0-9]
 {digito}+                        {return CONSTANTE;}
 .                                yyerror("ERROR");
 %%
-int main()
-{
-  yylex();
-  return 0;
-}
+
