@@ -41,7 +41,7 @@ listaExpresiones: expresion COMA expresion{printf("Expresion reconocida: %s\n", 
 expresion: CONSTANTE operadorAditivo CONSTANTE{if ($2 == '+'){$$ = $1 + $3;} else if ($2 == '-') {$$ = $1 - $3;}}
 ;
 operadorAditivo: SUMA{$$ = '+';}
-               | RESTA{$$ = '-';}
+| RESTA{$$ = '-';}
 ;
 %% 
 int main(){
