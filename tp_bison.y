@@ -22,8 +22,9 @@ programa: INICIO listaSentencias FIN {printf("Programa reconocido!\n");}
 listaSentencias:
 |listaSentencias sentencia
 ;
-sentencia: IDENTIFICADOR {printf("Identificador reconocido!\n");printf("La longitud es: %d\n", yyleng);if(yyleng > 32)yyerror("Error: no puede ser mayor a 32");} 
+sentencia: IDENTIFICADOR {printf("La longitud es: %d\n", yyleng);if(yyleng > 32)yyerror("Error: no puede ser mayor a 32");else printf("Identificador reconocido!\n");} 
 |IDENTIFICADOR ASIGNACION expresion PUNTOCOMA{printf("Asignación realizada.\n");}
+|CONSTANTE{printf("Digito reconocido!\n")}
 |expresion {printf("Expresion reconocida!\n"),printf("Resultado de la expresion: %d\n", $1);}
 |LEER PARIZQ listaIdentificadores PARDER PUNTOCOMA{printf("Lista de ID leida!\n");}
 |LEER PARIZQ listaExpresiones PARDER PUNTOCOMA{printf("Lista de Expresiones leida!\n");}
