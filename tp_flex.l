@@ -22,7 +22,7 @@ digito [0-9]
 ")"                              {return PARDER;}
 "=:"                             {return ASIGNACION;}
 {caracter}({caracter}|{digito})* {return IDENTIFICADOR;}
-{digito}+                        {return CONSTANTE;}
+{digito}+                        {yylval.digito = atoi(yytext);return CONSTANTE;}
 .                                {printf("Error léxico: %s\n", yytext);}
 %%
 
