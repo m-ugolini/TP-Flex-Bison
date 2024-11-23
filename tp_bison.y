@@ -22,16 +22,18 @@ programa: INICIO listaSentencias FIN {printf("Programa reconocido!\n");}
 listaSentencias:
 |listaSentencias sentencia
 ;
-sentencia: IDENTIFICADOR {printf("Identificador reconocido!\n");printf("La longitud es: %d\n", yyleng);if(yyleng > 32)yyerror("Error: no puede ser mayor a 32");} ASIGNACION expresion PUNTOCOMA
+sentencia: IDENTIFICADOR {printf("Identificador reconocido!\n");printf("La longitud es: %d\n", yyleng);if(yyleng > 32)yyerror("Error: no puede ser mayor a 32");} ASIGNACION expresion PUNTOCOMA{printf("Asignación realizada.\n");}
 |expresion {printf("Expresion reconocida!\n"),printf("Resultado de la expresion: %d\n", $1);}
-|LEER PARIZQ listaIdentificadores PARDER PUNTOCOMA
-|ESCRIBIR PARIZQ listaExpresiones PARDER PUNTOCOMA
+|LEER PARIZQ listaIdentificadores PARDER PUNTOCOMA{printf("Lista de ID leida!\n");}
+|LEER PARIZQ listaExpresiones PARDER PUNTOCOMA{printf("Lista de Expresiones leida!\n");}
+|ESCRIBIR PARIZQ listaExpresiones PARDER PUNTOCOMA{printf("Lista de Expresiones escrita!\n");}
+|ESCRIBIR PARIZQ listaIdentificadores PARDER PUNTOCOMA{printf("Lista de Identificadores escrita!\n");}
 ;
 listaIdentificadores: IDENTIFICADOR COMA IDENTIFICADOR
-|listaIdentificadores COMA IDENTIFICADOR
+|listaIdentificadores COMA IDENTIFICADOR{printf("Identificadores reconocidos: %s\n", yytext);}
 ;
 listaExpresiones: expresion COMA expresion
-|listaExpresiones COMA expresion
+|listaExpresiones COMA expresion{printf("Expresiones reconocidas: %s\n", yytext);}
 ;
 expresion: CONSTANTE operadorAditivo CONSTANTE{if ($2 == '+'){$$ = $1 + $3;} else if ($2 == '-') {$$ = $1 - $3;}}
 ;
