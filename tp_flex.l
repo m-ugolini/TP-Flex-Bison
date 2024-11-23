@@ -6,7 +6,7 @@ void yyerror(const char *s);
 %}
 %option noyywrap
 
-caracter [a-zA-Z]
+caracter [a-zA-Z_]
 digito [0-9]
 
 %%
