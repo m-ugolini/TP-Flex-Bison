@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "funciones.h"
 int yylex();
+extern int yyleng;
 void yyerror(const char *s);
 %} 
 %union{
@@ -14,11 +15,11 @@ void yyerror(const char *s);
 %% 
 objetivo: programa FDT
 ;
-programa: INICIO listaSentencias FIN { printf("Programa reconocido.\n"); }
+programa: INICIO listaSentencias FIN {printf("Programa reconocido.\n");}
 ;
 listaSentencias: sentencia sentencia
 ;
-sentencia: IDENTIFICADOR ASIGNACION expresion PUNTOCOMA
+sentencia: IDENTIFICADOR {printf("La longitud es: %d", yyleng); if(yyleng>32) yyerror("Error: no puede ser mayor a 32");} ASIGNACION expresion PUNTOCOMA
 |LEER PARIZQ listaIdentificadores PARDER PUNTOCOMA
 |ESCRIBIR PARIZQ listaExpresiones PARDER PUNTOCOMA
 ;
