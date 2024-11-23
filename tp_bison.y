@@ -28,8 +28,10 @@ sentencia: IDENTIFICADOR {printf("Identificador reconocido!\n");printf("La longi
 |ESCRIBIR PARIZQ listaExpresiones PARDER PUNTOCOMA
 ;
 listaIdentificadores: IDENTIFICADOR COMA IDENTIFICADOR
+|listaIdentificadores COMA IDENTIFICADOR
 ;
 listaExpresiones: expresion COMA expresion
+|listaExpresiones COMA expresion
 ;
 expresion: CONSTANTE operadorAditivo CONSTANTE{if ($2 == '+'){$$ = $1 + $3;} else if ($2 == '-') {$$ = $1 - $3;}}
 ;
