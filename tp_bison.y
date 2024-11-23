@@ -21,7 +21,7 @@ programa: INICIO listaSentencias FIN {printf("Programa reconocido.\n");}
 listaSentencias:
 |listaSentencias sentencia
 ;
-sentencia: IDENTIFICADOR {printf("La longitud es: %d", yyleng); if(yyleng>32) yyerror("Error: no puede ser mayor a 32");} ASIGNACION expresion PUNTOCOMA
+sentencia: IDENTIFICADOR {printf("Identificador reconocido!\n");printf("La longitud es: %d", yyleng); if(yyleng>32) yyerror("Error: no puede ser mayor a 32");} ASIGNACION expresion PUNTOCOMA
 |LEER PARIZQ listaIdentificadores PARDER PUNTOCOMA
 |ESCRIBIR PARIZQ listaExpresiones PARDER PUNTOCOMA
 ;
