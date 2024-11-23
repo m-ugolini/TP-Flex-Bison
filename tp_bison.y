@@ -33,10 +33,10 @@ sentencia: IDENTIFICADOR {printf("Identificador reconocido!\n");printf("La longi
 |listaExpresiones{printf("Lista de Expresiones reconocida!\n");}
 ;
 listaIdentificadores: IDENTIFICADOR COMA IDENTIFICADOR{printf("Identificador reconocido: %s\n", yytext);}
-|listaIdentificadores COMA IDENTIFICADOR{printf("Identificador reconocido: %s\n", yytext);}
+|listaIdentificadores COMA IDENTIFICADOR{printf("Otro dentificador reconocido: %s\n", yytext);}
 ;
 listaExpresiones: expresion COMA expresion{printf("Expresion reconocida: %s\n", yytext);}
-|listaExpresiones COMA expresion{printf("Expresion reconocida: %s\n", yytext);}
+|listaExpresiones COMA expresion{printf("Otra expresion reconocida: %s\n", yytext);}
 ;
 expresion: CONSTANTE operadorAditivo CONSTANTE{if ($2 == '+'){$$ = $1 + $3;} else if ($2 == '-') {$$ = $1 - $3;}}
 ;
