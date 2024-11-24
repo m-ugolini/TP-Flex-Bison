@@ -392,9 +392,9 @@ union yyalloc
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  9
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  21
+#define YYNRULES  22
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  47
+#define YYNSTATES  48
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
@@ -442,8 +442,8 @@ static const yytype_uint8 yytranslate[] =
 static const yytype_uint8 yyprhs[] =
 {
        0,     0,     3,     6,    10,    11,    14,    16,    21,    23,
-      29,    35,    41,    47,    49,    51,    55,    59,    63,    67,
-      71,    73
+      25,    31,    37,    43,    49,    51,    53,    57,    61,    65,
+      69,    73,    75
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
@@ -451,20 +451,20 @@ static const yytype_int8 yyrhs[] =
 {
       20,     0,    -1,    21,    14,    -1,     4,    22,     5,    -1,
       -1,    22,    23,    -1,    17,    -1,    17,     3,    26,     8,
-      -1,    26,    -1,     6,     9,    24,    10,     8,    -1,     6,
-       9,    25,    10,     8,    -1,     7,     9,    25,    10,     8,
-      -1,     7,     9,    24,    10,     8,    -1,    24,    -1,    25,
-      -1,    17,    13,    17,    -1,    24,    13,    17,    -1,    26,
-      13,    26,    -1,    25,    13,    26,    -1,    18,    27,    18,
-      -1,    11,    -1,    12,    -1
+      -1,    18,    -1,    26,    -1,     6,     9,    24,    10,     8,
+      -1,     6,     9,    25,    10,     8,    -1,     7,     9,    25,
+      10,     8,    -1,     7,     9,    24,    10,     8,    -1,    24,
+      -1,    25,    -1,    17,    13,    17,    -1,    24,    13,    17,
+      -1,    26,    13,    26,    -1,    25,    13,    26,    -1,    18,
+      27,    18,    -1,    11,    -1,    12,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
        0,    18,    18,    20,    22,    23,    25,    26,    27,    28,
-      29,    30,    31,    32,    33,    35,    36,    38,    39,    41,
-      43,    44
+      29,    30,    31,    32,    33,    34,    36,    37,    39,    40,
+      42,    44,    45
 };
 #endif
 
@@ -496,16 +496,16 @@ static const yytype_uint16 yytoknum[] =
 static const yytype_uint8 yyr1[] =
 {
        0,    19,    20,    21,    22,    22,    23,    23,    23,    23,
-      23,    23,    23,    23,    23,    24,    24,    25,    25,    26,
-      27,    27
+      23,    23,    23,    23,    23,    23,    24,    24,    25,    25,
+      26,    27,    27
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     2,     3,     0,     2,     1,     4,     1,     5,
-       5,     5,     5,     1,     1,     3,     3,     3,     3,     3,
-       1,     1
+       0,     2,     2,     3,     0,     2,     1,     4,     1,     1,
+       5,     5,     5,     5,     1,     1,     3,     3,     3,     3,
+       3,     1,     1
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -514,16 +514,16 @@ static const yytype_uint8 yyr2[] =
 static const yytype_uint8 yydefact[] =
 {
        0,     4,     0,     0,     0,     1,     2,     3,     0,     0,
-       6,     0,     5,    13,    14,     8,     0,     0,     0,     0,
-      20,    21,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,    15,    19,    16,    18,    17,     0,     0,
-       0,     0,     7,     9,    10,    12,    11
+       6,     8,     5,    14,    15,     9,     0,     0,     0,     0,
+      21,    22,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,    16,    20,    17,    19,    18,     0,
+       0,     0,     0,     7,    10,    11,    13,    12
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3,     4,    12,    13,    14,    29,    22
+      -1,     2,     3,     4,    12,    13,    14,    30,    22
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
@@ -533,9 +533,9 @@ static const yytype_int8 yypact[] =
 {
        2,   -10,     1,    11,    -2,   -10,   -10,   -10,     4,    21,
       -1,     6,   -10,    20,    22,    23,    -9,    -9,    -7,    17,
-     -10,   -10,    19,    24,    -7,    -7,    25,    -3,     9,    23,
-      13,    14,    31,   -10,   -10,   -10,   -10,   -10,    32,    34,
-      35,    36,   -10,   -10,   -10,   -10,   -10
+     -10,   -10,    19,    24,    -7,    -7,    25,     6,    -3,     9,
+      23,    13,    14,    31,   -10,   -10,   -10,   -10,   -10,    32,
+      34,    35,    36,   -10,   -10,   -10,   -10,   -10
 };
 
 /* YYPGOTO[NTERM-NUM].  */
@@ -551,11 +551,11 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-      15,     5,    18,     7,     8,     9,     1,    38,    26,    11,
-      23,    11,    19,    16,    32,    10,    11,    20,    21,    39,
-      36,    37,    24,    40,    41,     6,    23,    24,    27,    30,
-      17,    28,    31,    23,    33,    24,    25,    34,    19,    42,
-      43,    35,    44,    45,    46
+      15,     5,    18,     7,     8,     9,     1,    39,    26,    27,
+      23,    27,    19,    16,    33,    10,    11,    20,    21,    40,
+      37,    38,    24,    41,    42,     6,    23,    24,    28,    31,
+      17,    29,    32,    23,    34,    24,    25,    35,    19,    43,
+      44,    36,    45,    46,    47
 };
 
 static const yytype_uint8 yycheck[] =
@@ -573,9 +573,9 @@ static const yytype_uint8 yystos[] =
 {
        0,     4,    20,    21,    22,     0,    14,     5,     6,     7,
       17,    18,    23,    24,    25,    26,     9,     9,     3,    13,
-      11,    12,    27,    13,    13,    13,    17,    24,    25,    26,
-      24,    25,    26,    17,    18,    17,    26,    26,    10,    10,
-      10,    10,     8,     8,     8,     8,     8
+      11,    12,    27,    13,    13,    13,    17,    18,    24,    25,
+      26,    24,    25,    26,    17,    18,    17,    26,    26,    10,
+      10,    10,    10,     8,     8,     8,     8,     8
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1411,104 +1411,111 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 27 "tp_bison.y"
-    {printf("Expresion reconocida!\n"),printf("Resultado de la expresion: %d\n", (yyvsp[(1) - (1)].digito));}
+    {printf("Digito reconocido!\n");}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
 #line 28 "tp_bison.y"
-    {printf("Lista de ID leida!\n");}
+    {printf("Expresion reconocida!\n"),printf("Resultado de la expresion: %d\n", (yyvsp[(1) - (1)].digito));}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
 #line 29 "tp_bison.y"
-    {printf("Lista de Expresiones leida!\n");}
+    {printf("Lista de ID leida!\n");}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
 #line 30 "tp_bison.y"
-    {printf("Lista de Expresiones escrita!\n");}
+    {printf("Lista de Expresiones leida!\n");}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
 #line 31 "tp_bison.y"
-    {printf("Lista de Identificadores escrita!\n");}
+    {printf("Lista de Expresiones escrita!\n");}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
 #line 32 "tp_bison.y"
-    {printf("Lista de Identificadores reconocida!\n");}
+    {printf("Lista de Identificadores escrita!\n");}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
 #line 33 "tp_bison.y"
-    {printf("Lista de Expresiones reconocida!\n");}
+    {printf("Lista de Identificadores reconocida!\n");}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 35 "tp_bison.y"
-    {printf("Identificador reconocido: %s\n", yytext);}
+#line 34 "tp_bison.y"
+    {printf("Lista de Expresiones reconocida!\n");}
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
 #line 36 "tp_bison.y"
-    {printf("Otro dentificador reconocido: %s\n", yytext);}
+    {printf("Identificador reconocido: %s\n", yytext);}
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 38 "tp_bison.y"
-    {printf("Expresion reconocida: %s\n", yytext);}
+#line 37 "tp_bison.y"
+    {printf("Otro identificador reconocido: %s\n", yytext);}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
 #line 39 "tp_bison.y"
-    {printf("Otra expresion reconocida: %s\n", yytext);}
+    {printf("Expresion reconocida: %s\n", yytext);}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 41 "tp_bison.y"
-    {if ((yyvsp[(2) - (3)].digito) == '+'){(yyval.digito) = (yyvsp[(1) - (3)].digito) + (yyvsp[(3) - (3)].digito);} else if ((yyvsp[(2) - (3)].digito) == '-') {(yyval.digito) = (yyvsp[(1) - (3)].digito) - (yyvsp[(3) - (3)].digito);}}
+#line 40 "tp_bison.y"
+    {printf("Otra expresion reconocida: %s\n", yytext);}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 43 "tp_bison.y"
-    {(yyval.digito) = '+';}
+#line 42 "tp_bison.y"
+    {if ((yyvsp[(2) - (3)].digito) == '+'){(yyval.digito) = (yyvsp[(1) - (3)].digito) + (yyvsp[(3) - (3)].digito);} else if ((yyvsp[(2) - (3)].digito) == '-') {(yyval.digito) = (yyvsp[(1) - (3)].digito) - (yyvsp[(3) - (3)].digito);}}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
 #line 44 "tp_bison.y"
+    {(yyval.digito) = '+';}
+    break;
+
+  case 22:
+
+/* Line 1455 of yacc.c  */
+#line 45 "tp_bison.y"
     {(yyval.digito) = '-';}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1512 "y.tab.c"
+#line 1519 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1720,7 +1727,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 46 "tp_bison.y"
+#line 47 "tp_bison.y"
  
 int main(){
       yyparse();

@@ -34,7 +34,7 @@ sentencia: IDENTIFICADOR {printf("La longitud es: %d\n", yyleng);if(yyleng > 32)
 |listaExpresiones{printf("Lista de Expresiones reconocida!\n");}
 ;
 listaIdentificadores: IDENTIFICADOR COMA IDENTIFICADOR{printf("Identificador reconocido: %s\n", yytext);}
-|listaIdentificadores COMA IDENTIFICADOR{printf("Otro dentificador reconocido: %s\n", yytext);}
+|listaIdentificadores COMA IDENTIFICADOR{printf("Otro identificador reconocido: %s\n", yytext);}
 ;
 listaExpresiones: expresion COMA expresion{printf("Expresion reconocida: %s\n", yytext);}
 |listaExpresiones COMA expresion{printf("Otra expresion reconocida: %s\n", yytext);}
