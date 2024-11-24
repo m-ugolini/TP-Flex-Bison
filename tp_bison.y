@@ -22,7 +22,7 @@ programa: INICIO listaSentencias FIN {printf("Programa reconocido!\n");}
 listaSentencias:
 |listaSentencias sentencia
 ;
-sentencia: IDENTIFICADOR {printf("La longitud es: %d\n", yyleng);if(yyleng > 32)yyerror("Error: no puede ser mayor a 32");else printf("Identificador reconocido!\n");} 
+sentencia: IDENTIFICADOR {printf("Identificador reconocido! La longitud es: %d\n", yyleng);if(yyleng > 32)yyerror("Error: no puede ser mayor a 32");else printf("Identificador reconocido!\n");} 
 |IDENTIFICADOR ASIGNACION expresion PUNTOCOMA{printf("Asignación realizada.\n");}
 |CONSTANTE{printf("Digito reconocido!\n");}
 |expresion {printf("Expresion reconocida!\n"),printf("Resultado de la expresion: %d\n", $1);}
@@ -33,13 +33,14 @@ sentencia: IDENTIFICADOR {printf("La longitud es: %d\n", yyleng);if(yyleng > 32)
 |listaIdentificadores{printf("Lista de Identificadores reconocida!\n");}
 |listaExpresiones{printf("Lista de Expresiones reconocida!\n");}
 ;
-listaIdentificadores: IDENTIFICADOR COMA IDENTIFICADOR{printf("Identificador reconocido: %s\n", yytext);}
+listaIdentificadores: IDENTIFICADOR{printf("Identificador reconocido: %s\n", yytext);}
 |listaIdentificadores COMA IDENTIFICADOR{printf("Otro identificador reconocido: %s\n", yytext);}
 ;
-listaExpresiones: expresion COMA expresion{printf("Expresion reconocida: %s\n", yytext);}
+listaExpresiones: expresion{printf("Expresion reconocida: %s\n", yytext);}
 |listaExpresiones COMA expresion{printf("Otra expresion reconocida: %s\n", yytext);}
 ;
-expresion: CONSTANTE operadorAditivo CONSTANTE{if ($2 == '+'){$$ = $1 + $3;} else if ($2 == '-') {$$ = $1 - $3;}}
+expresion: CONSTANTE operadorAditivo CONSTANTE{if($2 == '+'){$$ = $1 + $3;} else if($2 == '-'){$$ = $1 - $3;}}
+|PARIZQ expresion PARDER{$$ = $2;}
 ;
 operadorAditivo: SUMA{$$ = '+';}
 | RESTA{$$ = '-';}
@@ -49,6 +50,5 @@ int main(){
       yyparse();
       return 0;
 }
-void yyerror(const char *s) {
-    fprintf(stderr, "Error: No pertenece al lenguaje micro %s\n", s);
-}
+
+void yyerror(const char *s) {fprintf(stderr, "Error: No pertenece al lenguaje micro %s\n", s);}
